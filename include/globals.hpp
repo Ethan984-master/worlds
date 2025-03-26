@@ -23,7 +23,7 @@ vex::motor rightMid(PORT17, vex::gearSetting::ratio18_1, true);
 double volt_to_rpm = 0.06;
 
 void motorHandler(double rpm, int side) {
-  if (abs(rpm) < 75) {
+  if (abs(rpm) < 6) {
     if (side == 0) {
       leftMid.setMaxTorque(2.1, vex::torqueUnits::Nm);
 
