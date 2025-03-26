@@ -40,7 +40,7 @@ void pre_auton(void) {
     wait(20, msec);
   }
   imu.setHeading(0, vex::rotationUnits::deg);
-  thread odomTask = thread(odom);
+  //thread odomTask = thread(odom);
 }
 
 /*---------------------------------------------------------------------------*/
