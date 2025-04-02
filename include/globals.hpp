@@ -25,7 +25,7 @@ double volt_to_rpm = 0.06;
 void motorHandler(double rpm, int side) {
   if (abs(rpm) < 6) {
     if (side == 0) {
-      leftMid.setMaxTorque(2.1, vex::torqueUnits::Nm);
+      leftMid.setMaxTorque(1.5, vex::torqueUnits::Nm);
 
       leftFront.spin(vex::directionType::fwd, rpm * volt_to_rpm,
                      vex::velocityUnits::rpm);
@@ -33,7 +33,7 @@ void motorHandler(double rpm, int side) {
                     vex::velocityUnits::rpm);
       leftMid.spin(vex::directionType::fwd, rpm, vex::voltageUnits::volt);
     } else {
-      rightMid.setMaxTorque(2.1, vex::torqueUnits::Nm);
+      rightMid.setMaxTorque(1.5, vex::torqueUnits::Nm);
 
       rightFront.spin(vex::directionType::fwd, rpm * volt_to_rpm,
                       vex::velocityUnits::rpm);
@@ -43,7 +43,7 @@ void motorHandler(double rpm, int side) {
     }
   } else {
     if (side == 0) {
-      leftMid.setMaxTorque(1, vex::torqueUnits::Nm);
+      leftMid.setMaxTorque(0.35, vex::torqueUnits::Nm);
 
       leftFront.spin(vex::directionType::fwd, rpm * volt_to_rpm,
                      vex::velocityUnits::rpm);
@@ -51,7 +51,7 @@ void motorHandler(double rpm, int side) {
                     vex::velocityUnits::rpm);
       leftMid.spin(vex::directionType::fwd, rpm, vex::voltageUnits::volt);
     } else {
-      rightMid.setMaxTorque(1, vex::torqueUnits::Nm);
+      rightMid.setMaxTorque(0.35, vex::torqueUnits::Nm);
 
       rightFront.spin(vex::directionType::fwd, rpm * volt_to_rpm,
                       vex::velocityUnits::rpm);
