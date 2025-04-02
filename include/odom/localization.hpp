@@ -350,11 +350,11 @@ private:
     //   and by exp_value from lane 2.
     // Finally, add a constant term (0.25 * MAX_DIST_RECIPROCAL) for further
     // adjustment.
-    weight += 0.25f /
+    weight += 0.45f /
                   (1.0f / (1.0f + vgetq_lane_f32(exp_values, 1)) -
                    1.0f / (1.0f + vgetq_lane_f32(exp_values, 2))) *
                   (INV_SQRT_2PI / stddev) * vgetq_lane_f32(exp_values, 2) +
-              0.25f * MAX_DIST_RECIPROCAL;
+              0.05f * MAX_DIST_RECIPROCAL;
 
     // Return the final combined weight.
     return weight;

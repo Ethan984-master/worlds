@@ -6,5 +6,6 @@
 		"cmath": "cpp",
 		"numeric": "cpp"
 	},
-	"cmake.sourceDirectory": "C:/Users/user/Documents/vex-vscode-projects/worlds/include/Eigen/doc"
+	"cmake.sourceDirectory": "C:/Users/user/Documents/vex-vscode-projects/worlds/include/Eigen/doc",
+	"C_Cpp.default.compilerPath": "/clang/bin/clang"
 }

@@ -19,10 +19,10 @@
 			"includePath": [
 				"${vex_sdkIncludes}"
 			],
-			"compilerPath": "${vex_compilerPath}",
+			"compilerPath": "C:/msys64/ucrt64/bin/gcc.exe",
 			"cStandard": "gnu99",
 			"cppStandard": "gnu++11",
-			"intelliSenseMode": "windows-clang-x86"
+			"intelliSenseMode": "windows-clang-arm64"
 		},
 		{
 			"name": "Mac",
