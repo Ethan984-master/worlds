@@ -14,12 +14,12 @@ vex::controller mast(vex::controllerType::primary);
 vex::brain Brain;
 
 namespace drive {
-vex::motor leftFront(PORT12);
-vex::motor leftBack(PORT11);
-vex::motor leftMid(PORT19);
-vex::motor rightFront(PORT13, vex::gearSetting::ratio18_1, true);
+vex::motor leftFront(PORT17);
+vex::motor leftBack(PORT19);
+vex::motor leftMid(PORT18);
+vex::motor rightFront(PORT11, vex::gearSetting::ratio18_1, true);
 vex::motor rightBack(PORT14, vex::gearSetting::ratio18_1, true);
-vex::motor rightMid(PORT17, vex::gearSetting::ratio18_1, true);
+vex::motor rightMid(PORT15, vex::gearSetting::ratio18_1, true);
 double volt_to_rpm = 0.06;
 
 void motorHandler(double rpm, int side) {
