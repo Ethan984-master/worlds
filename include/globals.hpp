@@ -20,10 +20,10 @@ vex::motor leftMid(PORT18);
 vex::motor rightFront(PORT11, vex::gearSetting::ratio18_1, true);
 vex::motor rightBack(PORT14, vex::gearSetting::ratio18_1, true);
 vex::motor rightMid(PORT15, vex::gearSetting::ratio18_1, true);
-double volt_to_rpm = 0.06;
+double volt_to_rpm = 100/12.0;
 
 void motorHandler(double rpm, int side) {
-  if (abs(rpm) < 6) {
+  if (abs(rpm) < 10) {
     if (side == 0) {
       leftMid.setMaxTorque(1.5, vex::torqueUnits::Nm);
 
