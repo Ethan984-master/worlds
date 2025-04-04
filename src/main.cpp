@@ -12,7 +12,7 @@
 #include <iostream>
 #include "globals.hpp"
 #include "odom/localization.hpp"
-#include "motions/dare.h"
+// #include "motions/dare.h"
 
 using namespace vex;
 
