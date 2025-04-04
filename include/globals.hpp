@@ -22,7 +22,7 @@ namespace drive
   vex::motor rightFront(PORT11, vex::gearSetting::ratio18_1, true);
   vex::motor rightBack(PORT14, vex::gearSetting::ratio18_1, true);
   vex::motor rightMid(PORT15, vex::gearSetting::ratio18_1, true);
-  double volt_to_rpm = 100 / 12.0;
+  double volt_to_rpm = 200 / 12.0;
 
   void motorHandler(double volt, int side)
   {
