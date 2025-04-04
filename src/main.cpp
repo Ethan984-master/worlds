@@ -99,9 +99,11 @@ int main() {
 
 
   // Prevent main from exiting with an infinite loop.
+  double percent_to_voltagepros = 127/100;
+  double voltagepros_to_volts = 12/127;
   while (true) {
-    double leftY = mast.Axis3.position() * 0.12;
-    double leftX = mast.Axis4.position() * 0.12;
+    double leftY = mast.Axis3.position() * percent_to_voltagepros;
+    double leftX = mast.Axis4.position() * percent_to_voltagepros;
 
     double r = std::sqrt(leftX * leftX + leftY * leftY);
     if (r == 0) {
@@ -114,9 +116,9 @@ int main() {
 
     if(absX >= absY){
       // y x 
-      drive::arcade(ny / absX * r, sgn(nx) * r);
+      drive::arcade(ny / absX * r * voltagepros_to_volts, sgn(nx) * r * voltagepros_to_volts);
     }else {
-      drive::arcade(sgn(ny) * r, nx / absY * r);
+      drive::arcade(sgn(ny) * r * voltagepros_to_volts, nx / absY * r * voltagepros_to_volts);
     }
     wait(10, msec);
   }

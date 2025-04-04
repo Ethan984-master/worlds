@@ -37,7 +37,7 @@ namespace drive
       }
       else
       {
-        leftMid.setMaxTorque(1.5, vex::torqueUnits::Nm);
+        leftMid.setMaxTorque(2.5, vex::currentUnits::amp);
         leftFront.spin(vex::directionType::fwd, volt * volt_to_rpm, vex::velocityUnits::rpm);
         leftBack.spin(vex::directionType::fwd, volt * volt_to_rpm, vex::velocityUnits::rpm);
         leftMid.spin(vex::directionType::fwd, volt, vex::voltageUnits::volt);
@@ -54,7 +54,7 @@ namespace drive
       }
       else
       {
-        rightMid.setMaxTorque(1.5, vex::torqueUnits::Nm);
+        rightMid.setMaxTorque(1.5, vex::currentUnits::amp);
         rightFront.spin(vex::directionType::fwd, volt * volt_to_rpm, vex::velocityUnits::rpm);
         rightBack.spin(vex::directionType::fwd, volt * volt_to_rpm, vex::velocityUnits::rpm);
         rightMid.spin(vex::directionType::fwd, volt, vex::voltageUnits::volt);
