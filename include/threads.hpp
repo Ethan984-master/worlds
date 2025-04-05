@@ -53,7 +53,7 @@ void odom() {
               delta_left * ROT_TO_DISTANCE, delta_right * ROT_TO_DISTANCE,
               measurements);
     int end = Brain.Timer.time(msec);
-    std::cout << end - start << std::endl;
+    // std::cout << end - start << std::endl;
     prev_right = right;
     prev_left = left;
     prev_heading = heading;

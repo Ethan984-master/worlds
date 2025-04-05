@@ -109,14 +109,13 @@ int main()
   while (true)
   {
     std::cout << Brain.Timer.time(vex::timeUnits::msec) << "	" << drive::rightBack.velocity(vex::velocityUnits::rpm) << std::endl;
-    if(i == 3000){
+    if(Brain.Timer.time(vex::timeUnits::msec) > 3000){
       drive::arcade(0, 0);
       break;
     }
     // double leftY = mast.Axis3.position() * percent_to_volt;
     // double leftX = mast.Axis4.position() * percent_to_volt;
     drive::arcade(12, 0);
-    i+=10;
     wait(10, msec);
   }
 }
