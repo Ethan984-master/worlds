@@ -28,7 +28,7 @@ namespace drive
   {
     if (side == 0)
     {
-      if (abs(leftMid.velocity(vex::velocityUnits::rpm)) > 160 && sgn(volt) == sgn(leftMid.velocity(vex::velocityUnits::rpm)))
+      if (abs(leftMid.velocity(vex::velocityUnits::rpm)) > 450 && sgn(volt) == sgn(leftMid.velocity(vex::velocityUnits::rpm)))
       {
         leftMid.setMaxTorque(0.35, vex::torqueUnits::Nm);
         leftFront.spin(vex::directionType::fwd, volt * volt_to_rpm, vex::velocityUnits::rpm);
@@ -45,7 +45,7 @@ namespace drive
     }
     else
     {
-      if (abs(rightMid.velocity(vex::velocityUnits::rpm)) > 160 && sgn(volt) == sgn(rightMid.velocity(vex::velocityUnits::rpm)))
+      if (abs(rightMid.velocity(vex::velocityUnits::rpm)) > 450 && sgn(volt) == sgn(rightMid.velocity(vex::velocityUnits::rpm)))
       {
         rightMid.setMaxTorque(0.35, vex::torqueUnits::Nm);
         rightFront.spin(vex::directionType::fwd, volt * volt_to_rpm, vex::velocityUnits::rpm);
