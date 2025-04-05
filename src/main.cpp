@@ -106,7 +106,7 @@ int main()
   // Prevent main from exiting with an infinite loop.
 
   double percent_to_volt = 100 / 12;
-  mast.ButtonL1.pressed([]() {
+  mast.ButtonR2.pressed([]() {
     clamp.toggle();
   });
   while (true)
@@ -116,11 +116,11 @@ int main()
     drive::arcade(leftY, leftX);
 
     // intake code 
-    if (mast.ButtonR1.pressing())
+    if (mast.ButtonL1.pressing())
     {
       Intake.spin(vex::directionType::fwd, 12, vex::voltageUnits::volt);
     }
-    else if (mast.ButtonR2.pressing())
+    else if (mast.ButtonL2.pressing())
     {
       Intake.spin(vex::directionType::rev, 12, vex::voltageUnits::volt);
     }
