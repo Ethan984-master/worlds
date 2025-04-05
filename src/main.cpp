@@ -42,7 +42,7 @@ void pre_auton(void)
     wait(20, msec);
   }
   imu.setHeading(0, vex::rotationUnits::deg);
-  thread odomTask = thread(odom);
+  // thread odomTask = thread(odom);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -108,6 +108,7 @@ int main()
   int i = 0;
   sleep(1);
   int startTime = Brain.Timer.time(vex::timeUnits::msec);
+  drive::arcade(12, 0);
   while (true)
   {
     std::cout << Brain.Timer.time(vex::timeUnits::msec) << "	" << drive::rightBack.velocity(vex::velocityUnits::rpm) << std::endl;
@@ -117,7 +118,6 @@ int main()
     }
     // double leftY = mast.Axis3.position() * percent_to_volt;
     // double leftX = mast.Axis4.position() * percent_to_volt;
-    drive::arcade(12, 0);
-    wait(10, msec);
+    wait(20, msec);
   }
 }
