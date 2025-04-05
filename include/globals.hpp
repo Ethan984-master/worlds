@@ -14,8 +14,8 @@ vex::distance backDistanceSensor(PORT20);
 vex::inertial imu(PORT2);
 vex::controller mast(vex::controllerType::primary);
 vex::brain Brain;
-vex::motor Intake(PORT19, vex::gearSetting::ratio6_1);
-Piston clamp(vex::digital_out(Brain.ThreeWirePort.A));
+vex::motor Intake(PORT20, vex::gearSetting::ratio6_1);
+Piston clamp(vex::digital_out(Brain.ThreeWirePort.H));
 
 namespace drive
 {
