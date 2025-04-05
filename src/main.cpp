@@ -107,7 +107,7 @@ int main()
 
   double percent_to_volt = 100 / 12;
   mast.ButtonR2.pressed([]() {
-    clamp.toggle();
+    clampBack.toggle();
   });
   while (true)
   {
