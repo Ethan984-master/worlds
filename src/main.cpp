@@ -112,7 +112,7 @@ int main()
   while (true)
   {
     std::cout << Brain.Timer.time(vex::timeUnits::msec) << "	" << drive::rightBack.velocity(vex::velocityUnits::rpm) << std::endl;
-    if(Brain.Timer.time(vex::timeUnits::msec) - startTime > 1000){
+    if(Brain.Timer.time(vex::timeUnits::msec) - startTime > 2000){
       drive::arcade(0, 0);
       break;
     }
