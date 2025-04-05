@@ -31,12 +31,14 @@ competition Competition;
 /*  not every time that the robot is disabled.                               */
 /*---------------------------------------------------------------------------*/
 
-void pre_auton(void) {
+void pre_auton(void)
+{
 
   // All activities that occur before the competition starts
-  // Example: clearing encoders, setting servo positions, ... 
+  // Example: clearing encoders, setting servo positions, ...
   imu.calibrate();
-  while(imu.isCalibrating()){
+  while (imu.isCalibrating())
+  {
     wait(20, msec);
   }
   imu.setHeading(0, vex::rotationUnits::deg);
@@ -53,7 +55,8 @@ void pre_auton(void) {
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
 
-void autonomous(void) {
+void autonomous(void)
+{
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
@@ -69,9 +72,11 @@ void autonomous(void) {
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
 
-void usercontrol(void) {
+void usercontrol(void)
+{
   // User control code here, inside the loop
-  while (1) {
+  while (1)
+  {
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
     // values based on feedback from the joysticks.
@@ -89,7 +94,8 @@ void usercontrol(void) {
 //
 // Main will set up the competition functions and callbacks.
 //
-int main() {
+int main()
+{
   // Set up callbacks for autonomous and driver control periods.
   Competition.autonomous(autonomous);
   Competition.drivercontrol(usercontrol);
@@ -97,13 +103,20 @@ int main() {
   // Run the pre-autonomous function.
   pre_auton();
 
-
   // Prevent main from exiting with an infinite loop.
-  double percent_to_volt = 100/12;
-  while (true) {
-    double leftY = mast.Axis3.position() * percent_to_volt;
-    double leftX = mast.Axis4.position() * percent_to_volt;
-    drive::arcade(leftY, leftX);
+  double percent_to_volt = 100 / 12;
+  int i = 0;
+  while (true)
+  {
+    std::cout << Brain.Timer.time(vex::timeUnits::msec) << "	" << drive::rightBack.velocity(vex::velocityUnits::rpm) << std::endl;
+    if(i == 3000){
+      drive::arcade(0, 0);
+      break;
+    }
+    // double leftY = mast.Axis3.position() * percent_to_volt;
+    // double leftX = mast.Axis4.position() * percent_to_volt;
+    drive::arcade(12, 0);
+    i+=10;
     wait(10, msec);
   }
 }
