@@ -106,7 +106,7 @@ int main()
   // Prevent main from exiting with an infinite loop.
   double percent_to_volt = 100 / 12;
   int i = 0;
-  sleep(1000);
+  sleep(1);
   int startTime = Brain.Timer.time(vex::timeUnits::msec);
   while (true)
   {

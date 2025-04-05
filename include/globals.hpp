@@ -16,13 +16,13 @@ vex::brain Brain;
 
 namespace drive
 {
-  vex::motor leftFront(PORT17);
-  vex::motor leftBack(PORT19);
-  vex::motor leftMid(PORT18);
-  vex::motor rightFront(PORT11, vex::gearSetting::ratio18_1, true);
-  vex::motor rightBack(PORT14, vex::gearSetting::ratio18_1, true);
-  vex::motor rightMid(PORT15, vex::gearSetting::ratio18_1, true);
-  double volt_to_rpm = 200 / 12.0;
+  vex::motor leftFront(PORT17, vex::gearSetting::ratio6_1);
+  vex::motor leftBack(PORT19, vex::gearSetting::ratio6_1);
+  vex::motor leftMid(PORT18, vex::gearSetting::ratio6_1);
+  vex::motor rightFront(PORT11, vex::gearSetting::ratio6_1, true);
+  vex::motor rightBack(PORT14, vex::gearSetting::ratio6_1, true);
+  vex::motor rightMid(PORT15, vex::gearSetting::ratio6_1, true);
+  double volt_to_rpm = 600 / 12.0;
 
   void motorHandler(double volt, int side)
   {
