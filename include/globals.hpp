@@ -2,6 +2,7 @@
 #define GLOBALS_HPP
 
 #include "vex.h"
+#include "motions/pistonClass.hpp"
 using namespace vex;
 
 template <typename T>
@@ -13,6 +14,8 @@ vex::distance backDistanceSensor(PORT20);
 vex::inertial imu(PORT2);
 vex::controller mast(vex::controllerType::primary);
 vex::brain Brain;
+vex::motor Intake(PORT19, vex::gearSetting::ratio6_1);
+Piston clamp(vex::digital_out(Brain.ThreeWirePort.A));
 
 namespace drive
 {

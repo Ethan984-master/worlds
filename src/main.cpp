@@ -104,20 +104,30 @@ int main()
   pre_auton();
 
   // Prevent main from exiting with an infinite loop.
+
   double percent_to_volt = 100 / 12;
-  int i = 0;
-  wait(10, msec);
-  int startTime = Brain.Timer.time(vex::timeUnits::msec);
-  drive::arcade(12, 0);
+  mast.ButtonL1.pressed([]() {
+    clamp.toggle();
+  });
   while (true)
   {
-    std::cout << Brain.Timer.time(vex::timeUnits::msec) << "	" << drive::rightBack.velocity(vex::velocityUnits::rpm) << std::endl;
-    if(Brain.Timer.time(vex::timeUnits::msec) - startTime > 2000){
-      drive::arcade(0, 0);
-      break;
+    double leftY = mast.Axis3.position() * percent_to_volt;
+    double leftX = mast.Axis4.position() * percent_to_volt;
+    drive::arcade(leftY, leftX);
+
+    // intake code 
+    if (mast.ButtonR1.pressing())
+    {
+      Intake.spin(vex::directionType::fwd, 12, vex::voltageUnits::volt);
     }
-    // double leftY = mast.Axis3.position() * percent_to_volt;
-    // double leftX = mast.Axis4.position() * percent_to_volt;
-    wait(20, msec);
+    else if (mast.ButtonR2.pressing())
+    {
+      Intake.spin(vex::directionType::rev, 12, vex::voltageUnits::volt);
+    }
+    else
+    {
+      Intake.stop(vex::brakeType::coast);
+    }
+    wait(10, msec);
   }
 }
