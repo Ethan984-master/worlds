@@ -106,10 +106,12 @@ int main()
   // Prevent main from exiting with an infinite loop.
   double percent_to_volt = 100 / 12;
   int i = 0;
+  sleep(1000);
+  int startTime = Brain.Timer.time(vex::timeUnits::msec);
   while (true)
   {
     std::cout << Brain.Timer.time(vex::timeUnits::msec) << "	" << drive::rightBack.velocity(vex::velocityUnits::rpm) << std::endl;
-    if(Brain.Timer.time(vex::timeUnits::msec) > 3000){
+    if(Brain.Timer.time(vex::timeUnits::msec) - startTime > 3000){
       drive::arcade(0, 0);
       break;
     }
