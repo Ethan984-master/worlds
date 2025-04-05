@@ -15,7 +15,9 @@ vex::inertial imu(PORT2);
 vex::controller mast(vex::controllerType::primary);
 vex::brain Brain;
 vex::motor Intake(PORT20, vex::gearSetting::ratio6_1);
-Piston clamp(vex::digital_out(Brain.ThreeWirePort.H));
+Piston clamp(vex::digital_out(Brain.ThreeWirePort.G));
+Piston rushArm(vex::digital_out(Brain.ThreeWirePort.H));
+Piston rushClamp(vex::digital_out(Brain.ThreeWirePort.F));
 
 namespace drive
 {
